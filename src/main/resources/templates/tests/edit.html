@@ -2,27 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>書籍編集画面</title>
+<title>授業登録編集画面</title>
 </head>
 <body>
-	<form th:action="@{/books/edit}" th:object="${bookForm}" method="post">
+	<form th:action="@{/tests/edit}" th:object="${testForm}" method="post">
 		<table>
 			<tr>
 				<td>タイトル:</td>
-				<td><input type="text" name="title" th:field="*{title}" /></td>
+				<td><input type="text" name="title" th:field="*{classroom}" /></td>
 			</tr>
 			<tr>
 				<td>著者：</td>
-				<td><input type="text" name="writter" th:field="*{writter}" /></td>
+				<td><input type="text" name="writter" th:field="*{subject}" /></td>
 			</tr>
 			<tr>
 				<td>出版社：</td>
-				<td><input type="text" name="publisher" th:field="*{publisher}" /></td>
+				<td><input type="text" name="publisher" th:field="*{teacher}" /></td>
 			</tr>
 			<tr>
+			<!-- 
 				<td>価格：</td>
 				<td><input type="text" name="price" th:field="*{price}" /></td>
-			</tr>
+			</tr> 
+			-->
 		</table>
 		<input type="hidden" name="id" th:value="${param.id[0]}" /> <input
 			type="submit" name="goToTop" value=" 戻る " /> <input type="submit"
