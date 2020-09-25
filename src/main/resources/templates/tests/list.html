@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head> <meta charset="UTF-8" />
- <title>書籍登録一覧画面</title>
+ <title>授業登録画面</title>
   </head>
    <body>
    <form th:action="@{/tests/create}" method="post"> 
    <table> 
-    <tr><td>タイトル:</td><td><input type="text" name="title" /></td></tr> 
-    <tr><td>著者：</td><td><input type="text" name="writter" /></td></tr> 
-    <tr><td>出版社：</td><td><input type="text" name="publisher" /></td></tr>
-     <tr><td>価格：</td><td><input type="text" name="price" /></td></tr>
+    <tr><td>教室名:</td><td><input type="text" name="classroom" /></td></tr>
+    <tr><td>科目名：</td><td><input type="text" name="subject" /></td></tr>
+    <tr><td>担当講師名：</td><td><input type="text" name="teacher" /></td></tr>
+    <!--  <tr><td>日付：</td><td><input type="text" name="price" /></td></tr> -->
     </table>
-   <input type="submit" value=" 作成 " /> 
+   <input type="submit" value=" 作成 " />
    </form> 
    <hr/>
    
    <table>
     <tr th:each="test : ${tests}">
      <td th:text="${test.id}">100</td>
-     <td th:text="${test.title}"> タイトルＡ </td>
-     <td th:text="${test.writter}"> 著者Ａ </td>
-     <td th:text="${test.publisher}"> 出版社Ａ </td>
-     <td th:text="${test.price}">100</td> 
+     <td th:text="${test.classroom}"> 教室A </td>
+     <td th:text="${test.subject}"> 科目A </td>
+     <td th:text="${test.teacher}"> 講師太郎 </td>
+    <!--  <td th:text="${test.price}">100</td>  -->
      <td>
      <form th:action="@{/tests/edit}" method="post">
      <input type="submit" name="form" value=" 編集 " />

@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.dca;
+package jp.te4a.spring.boot.dca.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,12 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jp.te4a.spring.boot.dca.bean.TestBean;
+import jp.te4a.spring.boot.dca.form.TestForm;
+import jp.te4a.spring.boot.dca.repository.TestRepository;
+
 @Service
 public class TestService {
-	
 	
 	 @Autowired 
 	TestRepository testRepository;

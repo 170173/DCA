@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.dca;
+package jp.te4a.spring.boot.dca.form;
 
 import lombok.AllArgsConstructor; 
 import lombok.Data; import lombok.NoArgsConstructor; 
@@ -7,9 +7,8 @@ import lombok.Data; import lombok.NoArgsConstructor;
 public class TestForm{ 
 	
 	private Integer id ;
-	private String title;
-	private String writter;
-	private String publisher;
-	private Integer price;
+	private String classroom;
+	private String subject;
+	private String teacher;
 	
 }
