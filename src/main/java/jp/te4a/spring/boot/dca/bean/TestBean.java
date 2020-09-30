@@ -3,14 +3,20 @@ package jp.te4a.spring.boot.dca.bean;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Tests")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 public class TestBean {
 	
-	private Integer id;
+	@Id
+	@GeneratedValue
+	private Integer id ;
+	@Column(nullable = false)
 	private String classroom;
 	private String subject;
 	private String teacher;

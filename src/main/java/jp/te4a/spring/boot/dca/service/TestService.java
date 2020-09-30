@@ -19,22 +19,25 @@ public class TestService {
 	TestRepository testRepository;
 
 	public TestForm create(TestForm testForm) {
-		testForm.setId(testRepository.getTestId());
-		TestBean testBean = new TestBean();
-		BeanUtils.copyProperties(testForm, testBean);
-		testRepository.create(testBean);
-		return testForm;
-	}
+		  TestBean testBean = new TestBean();
+		  BeanUtils.copyProperties(testForm, testBean);
+		  testRepository.save(testBean);
+		  return testForm;
+		}
 
-	public TestForm update(TestForm testForm){
-		TestBean testBean = new TestBean();
-		BeanUtils.copyProperties(testForm, testBean);
-		testRepository.update(testBean);
-		return testForm;
-	}
+
+	public TestForm update(TestForm testForm) {
+		  TestBean testBean = new TestBean();
+		  BeanUtils.copyProperties(testForm, testBean);
+		  testRepository.save(testBean);
+		  return testForm;
+		}
+
 
 	public void delete(Integer id) {
-		testRepository.delete(id);
+		TestBean testBean = new TestBean();
+		testBean.setId(id);
+		testRepository.delete(testBean);
 	}
 
 	public List<TestForm> findAll() {
@@ -49,7 +52,7 @@ public class TestService {
 	}
 
 	public TestForm findOne(Integer id) {
-		TestBean testBean = testRepository.findOne(id);
+		Optional<TestBean> testBean = testRepository.findById(id);
 		TestForm testForm = new TestForm();
 		BeanUtils.copyProperties(testBean, testForm);
 		return testForm;
